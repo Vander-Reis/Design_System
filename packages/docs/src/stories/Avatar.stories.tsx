@@ -8,6 +8,13 @@ export default {
     src: "https://github.com/vander-reis.png",
     alt: "Vander Reis",
   },
+  argTypes: {
+    src: {
+      control: {
+        type: "text",
+      },
+    },
+  },
 } as Meta<AvatarProps>;
 
 export const Primary: StoryObj<AvatarProps> = {};
