@@ -23,3 +23,5 @@ export function Tooltip({ children, content, ...props }: TooltipProps) {
     </TooltipPrimitive.Provider>
   );
 }
+
+Tooltip.displayName = "Tooltip";

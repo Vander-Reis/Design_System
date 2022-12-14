@@ -1,5 +1,11 @@
 # @vander-ignite-ui/react
 
+## 4.0.0
+
+### Major Changes
+
+- create new components toast and tooltip
+
 ## 3.0.0
 
 ### Major Changes

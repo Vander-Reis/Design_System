@@ -64,6 +64,7 @@ __export(src_exports, {
   Text: () => Text,
   TextArea: () => TextArea,
   TextInput: () => TextInput,
+  Toast: () => Toast,
   Tooltip: () => Tooltip
 });
 module.exports = __toCommonJS(src_exports);
@@ -560,6 +561,101 @@ function Tooltip(_a) {
     ] }) })
   ] })) });
 }
+Tooltip.displayName = "Tooltip";
+
+// src/components/Toast/index.tsx
+var ToastPrimitive2 = __toESM(require("@radix-ui/react-toast"));
+var import_phosphor_react3 = require("phosphor-react");
+
+// src/components/Toast/styles.ts
+var ToastPrimitive = __toESM(require("@radix-ui/react-toast"));
+var hidden = keyframes({
+  from: { opacity: 1 },
+  to: { opacity: 0 }
+});
+var slideIn2 = keyframes({
+  from: { transform: `translateX(calc(100% + 25px))` },
+  to: { transform: "translateX(0)" }
+});
+var swipeOut = keyframes({
+  from: { transform: "translateX(0)" },
+  to: { transform: `translateX(calc(100% + 25px))` }
+});
+var ToastRoot = styled(ToastPrimitive.Root, {
+  padding: "$3 $4",
+  background: "$gray800",
+  border: "1px solid $gray600",
+  borderRadius: "$sm",
+  fontFamily: "$default",
+  position: "relative",
+  '&[data-state="open"]': {
+    animation: `${slideIn2} 150ms cubic-bezier(0.16, 1, 0.3, 1)`
+  },
+  '&[data-state="closed"]': {
+    animation: `${hidden} 100ms ease-in`
+  },
+  '&[data-swipe="move"]': {
+    transform: "translateX(0)"
+  },
+  '&[data-swipe="cancel"]': {
+    transform: "translateX(0)",
+    transition: "transform 200ms ease-out"
+  },
+  '&[data-swipe="end"]': {
+    animation: `${swipeOut} 100ms ease-out`
+  }
+});
+var ToastTitle = styled(ToastPrimitive.Title, {
+  color: "$white",
+  fontWeight: "$bold",
+  fontSize: "$xl",
+  lineHeight: "$base"
+});
+var ToastDescription = styled(ToastPrimitive.Description, {
+  color: "$gray200",
+  fontSize: "$sm",
+  lineHeight: "$base",
+  marginTop: "$1"
+});
+var ToastClose = styled(ToastPrimitive.Close, {
+  position: "absolute",
+  top: "$4",
+  right: "$4",
+  background: "none",
+  border: "none",
+  color: "$gray200",
+  cursor: "pointer"
+});
+var ToastViewport = styled(ToastPrimitive.Viewport, {
+  position: "fixed",
+  bottom: 0,
+  right: 0,
+  display: "flex",
+  flexDirection: "column",
+  padding: 25,
+  gap: 10,
+  width: 360,
+  maxWidth: "100vw",
+  height: 82,
+  listStyle: "none",
+  zIndex: 1e4,
+  outline: "none"
+});
+
+// src/components/Toast/index.tsx
+var import_jsx_runtime6 = require("react/jsx-runtime");
+function Toast(_a) {
+  var _b = _a, { title, description } = _b, props = __objRest(_b, ["title", "description"]);
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(ToastPrimitive2.Provider, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(ToastRoot, __spreadProps(__spreadValues({}, props), { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(ToastTitle, { children: title }),
+      !!description && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(ToastDescription, { children: description }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(ToastClose, { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_phosphor_react3.X, { weight: "light", size: 20 }) })
+    ] })),
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(ToastViewport, {})
+  ] });
+}
+Toast.displayName = "Toast";
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
@@ -571,5 +667,6 @@ function Tooltip(_a) {
   Text,
   TextArea,
   TextInput,
+  Toast,
   Tooltip
 });
