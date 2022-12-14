@@ -63,7 +63,8 @@ __export(src_exports, {
   MultiStep: () => MultiStep,
   Text: () => Text,
   TextArea: () => TextArea,
-  TextInput: () => TextInput
+  TextInput: () => TextInput,
+  Tooltip: () => Tooltip
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -82,7 +83,8 @@ var colors = {
   ignite300: "#00B37E",
   ignite500: "#00875F",
   ignite700: "#015F43",
-  ignite900: "#00291D"
+  ignite900: "#00291D",
+  test: "#fff"
 };
 var space = {
   1: "0.25rem",
@@ -526,6 +528,38 @@ function MultiStep({ size, currentStep = 1 }) {
   ] });
 }
 MultiStep.displayName = "MultiStep";
+
+// src/components/Tooltip/index.tsx
+var TooltipPrimitive2 = __toESM(require("@radix-ui/react-tooltip"));
+
+// src/components/Tooltip/styles.ts
+var TooltipPrimitive = __toESM(require("@radix-ui/react-tooltip"));
+var TooltipContent = styled(TooltipPrimitive.Content, {
+  padding: "$3 $4",
+  background: "$gray900",
+  color: "$gray100",
+  fontFamily: "$default",
+  fontSize: "$sm",
+  borderRadius: "$xs",
+  fontWeight: "$medium",
+  filter: "drop-shadow(4px 16px 24px rgba(0, 0, 0, 0.25))"
+});
+var TooltipArrow = styled(TooltipPrimitive.Arrow, {
+  fill: "$gray900"
+});
+
+// src/components/Tooltip/index.tsx
+var import_jsx_runtime5 = require("react/jsx-runtime");
+function Tooltip(_a) {
+  var _b = _a, { children, content } = _b, props = __objRest(_b, ["children", "content"]);
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipPrimitive2.Provider, { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(TooltipPrimitive2.Root, __spreadProps(__spreadValues({}, props), { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipPrimitive2.Trigger, { asChild: true, children }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipPrimitive2.Portal, { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(TooltipContent, { children: [
+      content,
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(TooltipArrow, {})
+    ] }) })
+  ] })) });
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
@@ -536,5 +570,6 @@ MultiStep.displayName = "MultiStep";
   MultiStep,
   Text,
   TextArea,
-  TextInput
+  TextInput,
+  Tooltip
 });

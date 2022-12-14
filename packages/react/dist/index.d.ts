@@ -1,9 +1,10 @@
 import * as _stitches_react_types_styled_component from '@stitches/react/types/styled-component';
 import * as _stitches_react_types_css_util from '@stitches/react/types/css-util';
 import * as react from 'react';
-import { ComponentProps, ElementType } from 'react';
+import { ComponentProps, ElementType, ReactNode } from 'react';
 import * as Avatar$1 from '@radix-ui/react-avatar';
 import * as Checkbox$1 from '@radix-ui/react-checkbox';
+import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
 declare const Box: _stitches_react_types_styled_component.StyledComponent<"div", {}, {}, _stitches_react_types_css_util.CSS<{}, {
     colors: {
@@ -21,6 +22,7 @@ declare const Box: _stitches_react_types_styled_component.StyledComponent<"div",
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -229,6 +231,7 @@ declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", 
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -437,6 +440,7 @@ declare const Heading: _stitches_react_types_styled_component.StyledComponent<"h
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -643,6 +647,7 @@ declare const AvatarImage: _stitches_react_types_styled_component.StyledComponen
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -856,6 +861,7 @@ declare const Button: _stitches_react_types_styled_component.StyledComponent<"bu
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -1062,6 +1068,7 @@ declare const Input: _stitches_react_types_styled_component.StyledComponent<"inp
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -1273,6 +1280,7 @@ declare const TextArea: _stitches_react_types_styled_component.StyledComponent<"
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -1478,6 +1486,7 @@ declare const CheckboxContainer: _stitches_react_types_styled_component.StyledCo
         ignite500: string;
         ignite700: string;
         ignite900: string;
+        test: string;
     };
     fontSizes: {
         xxs: string;
@@ -1681,4 +1690,10 @@ declare namespace MultiStep {
     var displayName: string;
 }
 
-export { Avatar, AvatarProps, Box, BoxProps, Button, ButtonProps, Checkbox, CheckboxProps, Heading, HeadingProps, MultiStep, MultiStepProps, Text, TextArea, TextAreaProps, TextInput, TextInputProps, TextProps };
+interface TooltipProps extends ComponentProps<typeof TooltipPrimitive.Root> {
+    content: string;
+    children: ReactNode;
+}
+declare function Tooltip({ children, content, ...props }: TooltipProps): JSX.Element;
+
+export { Avatar, AvatarProps, Box, BoxProps, Button, ButtonProps, Checkbox, CheckboxProps, Heading, HeadingProps, MultiStep, MultiStepProps, Text, TextArea, TextAreaProps, TextInput, TextInputProps, TextProps, Tooltip, TooltipProps };
