@@ -1,0 +1,2 @@
+import{A as t}from"./index.7e9b1868.js";import"./index.42532e18.js";import"./iframe.2a77098a.js";import"./index.105c71af.js";import"./jsx-runtime.2edeb2f4.js";const e={title:"Data display/Avatar",component:t,args:{src:"https://github.com/vander-reis.png",alt:"Vander Reis"},argTypes:{src:{control:{type:"text"}}}},p={},c={args:{src:void 0}},m=["Primary","WithFallback"];export{p as Primary,c as WithFallback,m as __namedExportsOrder,e as default};
+//# sourceMappingURL=Avatar.stories.555cefa6.js.map

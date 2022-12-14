@@ -1,0 +1,2 @@
+import{e as o,a as r}from"./index.7e9b1868.js";import{j as t}from"./jsx-runtime.2edeb2f4.js";import"./index.42532e18.js";import"./iframe.2a77098a.js";import"./index.105c71af.js";const m={title:"Surfaces/Tooltip",component:o,args:{children:t(r,{children:"Hover me "}),content:"26 de Outubro - Dispon\xEDvel"},argTypes:{children:{control:{type:null}}}},a={},l=["Primary"];export{a as Primary,l as __namedExportsOrder,m as default};
+//# sourceMappingURL=TooltipDemo.stories.99915d80.js.map
